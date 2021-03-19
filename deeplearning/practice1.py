@@ -9,6 +9,6 @@ def lossfunc(yhat, y):
     db = 0
 
 def gen_samples(m):
-    x1 = np.array()pyt
+    x1 = np.array()
     x2 = np.array()
     y = np.array()
