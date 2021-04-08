@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web sudoku</title>
+    <link href="./style.css" rel="stylesheet">
+    <script src="sudoku.js"></script>
+</head>
+
+<a href="#" id="sidebar-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</a>
+
+<h1 id="sudoku_title">SUDOKU</h1>
+
+<div id="sudoku_menu">
+   <button onclick='go()'>New Game!</button>
+</div>
+
+<div id="sudoku_container">
+    
+    <div id="board"></div>
+    <div>
+        <button id="buttonForBoard" type="button" onclick="submit()" >Submit</button>
+        <br>
+    </div>
+
+    <input id="Brow" type="number" placeholder="Row" />
+    <input id="Bcol" type="number" placeholder="Col" />
+    <button id="bval" type="button" onclick="Print(document.getElementById('Brow').value, document.getElementById('Bcol').value)">
+    GetValue</button>
+</div>
+
+</html>

@@ -1,0 +1,15 @@
+/Users/kwonminsuk/workspace/myApp/bin/Debug/net5.0/myApp.deps.json
+/Users/kwonminsuk/workspace/myApp/bin/Debug/net5.0/myApp.runtimeconfig.json
+/Users/kwonminsuk/workspace/myApp/bin/Debug/net5.0/myApp.runtimeconfig.dev.json
+/Users/kwonminsuk/workspace/myApp/bin/Debug/net5.0/myApp.dll
+/Users/kwonminsuk/workspace/myApp/bin/Debug/net5.0/ref/myApp.dll
+/Users/kwonminsuk/workspace/myApp/bin/Debug/net5.0/myApp.pdb
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.csprojAssemblyReference.cache
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.AssemblyInfoInputs.cache
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.AssemblyInfo.cs
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.csproj.CoreCompileInputs.cache
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.dll
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/ref/myApp.dll
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.pdb
+/Users/kwonminsuk/workspace/myApp/obj/Debug/net5.0/myApp.genruntimeconfig.cache
