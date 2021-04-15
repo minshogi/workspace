@@ -1,0 +1,47 @@
+body{
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1{
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+}
+
+main > div{
+  border: white 5px solid;
+  width: 180px;
+  height: 360px;
+  margin: 10px;
+  position: relative;
+}
+
+main > div:first-child{
+  background-color: tomato;
+}
+div:nth-child(2){
+  background-color: teal;
+}
+div:nth-child(3){
+  background-color: burlywood;
+}
+div:nth-child(4){
+  background-color: thistle;
+}
+
+div > div{
+  background-color: white;
+  position: absolute;
+  top: 30px;
+  width: 180px;
+  height: 130px;
+}

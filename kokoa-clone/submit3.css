@@ -1,0 +1,95 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+main{
+    background-color: #7cc9ccfd;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+div{
+    margin: 30px;
+}
+
+@keyframes Rotate{
+    0% {
+        transform: rotateZ(0);
+    }
+    30%, 50%{
+        transform: rotateZ(180deg);
+    }
+    80%, 100%{
+        transform: rotateZ(360deg);
+    }
+
+
+}
+
+@keyframes Dancing{
+    0% {
+        transform: scaleY(1);
+    }
+
+    30%{
+        transform: scaleY(2);
+    }
+
+    60%, 100%{
+        transform: scaleY(1);
+    }
+}
+
+#Dots{
+    display: flex;
+    animation: Rotate 3s ease-in-out infinite;
+
+}
+
+.dot{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 15px;
+
+}
+
+#Squares{
+    display: flex;
+}
+
+.Square{
+    background-color: white;
+    width: 15px;
+    height: 45px;
+    margin: 3px;
+    animation: Dancing 1.2s ease-in-out infinite;
+}
+
+div[id="Squares"]>div:nth-child(1){
+    animation-delay: 0s;
+}
+div[id="Squares"]>div:nth-child(2){
+    animation-delay: 0.12s;
+}
+div[id="Squares"]>div:nth-child(3){
+    animation-delay: 0.24s;
+}
+div[id="Squares"]>div:nth-child(4){
+    animation-delay: 0.36s;
+}
+div[id="Squares"]>div:nth-child(5){
+    animation-delay: 0.48s;
+}
+div[id="Squares"]>div:nth-child(6){
+    animation-delay: 0.6s;
+}

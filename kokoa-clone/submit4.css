@@ -1,0 +1,163 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.mainscreen{
+    width: fit-content;
+    height: fit-content;
+    border: cadetblue solid 3px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.Playlist{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+}
+
+.Playlist__column{
+    width: 33%;
+}
+
+.Playlist__column:nth-child(1){
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10px;
+}
+.Playlist__column:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+.Nowplay{
+    display: flex;
+    justify-content: left;
+    height: 170px;
+}
+
+.Nowplay__img{
+    width: 130px;
+    height: 130px;
+    border: black 3px solid;
+    border-radius: 20px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.fa-image{
+    color:white;
+}
+
+.Nowplay__info{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.Big{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.Small{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.PlayIcons{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.PlayIcons__play{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    border: black 3px solid;
+    border-radius: 10px;
+    box-shadow: black 0px 2px;
+}
+
+.PlayIcons__play__span{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+
+.PlayIcons__Circle{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: black 3px solid;
+    box-shadow: black 0px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.musicitems{
+    display: flex;
+    justify-items: left;
+    flex-direction: column;
+    margin: 15px 0px;
+}
+
+.musicitems__row{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    margin: 10px;
+}
+
+.musicitems__icon{
+    width: 60px;
+    height: 60px;
+    border: solid black 3px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.musicitems__row:nth-child(1) > .musicitems__icon{
+    background-color: tomato;
+}
+.musicitems__row:nth-child(2) > .musicitems__icon{
+    background-color: pink;
+}
+.musicitems__row:nth-child(3) > .musicitems__icon{
+    background-color: blue;
+}
+.musicitems__row:nth-child(4) > .musicitems__icon{
+    background-color: green;
+}
+
+.musicitems__info{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.musicitems__info__big{
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 10px 0px 5px 5px;
+}
+
+.musicitems__info__small{
+    font-size: 15px;
+    margin: 0px 0px 5px 5px;
+    color: gray;
+}

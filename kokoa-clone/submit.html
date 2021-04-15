@@ -1,69 +1,19 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Home - My first website</title>
-</head>
-
-<body>
-    <header>
-        <h1>
-        Create An Account
-        </h1>
-    </header>
-    <main>
-        <form>
-            <div>
-                <label for="fName">First name</label>
-                <input id="fName" placeholder="First Name" type="text" required />
+    <head>
+        <title>CSS challenge</title>
+        <link href="submit.css" rel="stylesheet" />
+         <meta charset="utf-8" />
+    </head>
+    <body class="flexbox" id="first">
+        <div class="flexbox" id="second">
+            <div class="third">
             </div>
-            <div>
-                <label for="lName">Last name</label>
-                <input id="lName" placeholder="Last Name" type="text" required />
+            <div class="third long">
             </div>
-            <div>
-                <label for="Email">Email</label>
-              <input id="Email" placeholder="Email" type="email" required/>
+            <div class="third">
             </div>
-            <div>
-                <label for="Uname">Username</label>
-                <input id="Uname" placeholder="Username" type="text" required />
-            </div>
-            <div>
-                <label for="Password">Password</label>
-                <input id="Password" placeholder="Password" type="password" minlength="10" required />
-            </div>
-
-            <div>
-                <label for="Bday">Birth date</label>
-                <input id="Bday" type="date" required />
-            </div>
-            
-            <div>
-                <label for="Happy">How happy are you?</label>
-                <input id="Happy" type="range" list="tickmarks" required/>
-                <datalist id="tickmarks">
-                    <option value="0"></option>
-                    <option value="10"></option>
-                    <option value="20"></option>
-                    <option value="30"></option>
-                    <option value="40"></option>
-                    <option value="50"></option>
-                    <option value="60"></option>
-                    <option value="70"></option>
-                    <option value="80"></option>
-                    <option value="90"></option>
-                    <option value="100"></option>
-                </datalist>
-            </div>
-            <div>
-                <label for="Color">What is your fav.color?</label>
-                <input id="Color" type="color" required/>
-            </div>
-
-            <input value="Create Account" type="submit" />
-        </form>
-    </main>
-</body>
+        </div>
+    </body>
 
 </html>
