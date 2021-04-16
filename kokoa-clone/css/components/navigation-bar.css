@@ -1,11 +1,11 @@
 .nav{
     position: fixed;
     bottom: 0;
-    background-color: rgb(211, 211, 211);
+    background-color: rgba(211, 211, 211, 0.3);
     padding: 20px 50px;
     box-sizing: border-box;
     width: 100%;
-    border-top: rgb(158, 158, 158);
+    border-top: rgba(211, 211, 211, 1) solid 1px;
 }
 
 .nav__list{
@@ -16,4 +16,33 @@
 
 .nav__link{
     color: black;
+    display: flex;
+    position: relative;
+    text-decoration: none;
 }
+
+.nav__link__chatStatus{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    left: 15px;
+    bottom: 15px;
+}
+
+.nav__link__ellipseStatus{
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: red;
+    position: absolute;
+    right: -3px;
+    top: -3px;
+}
+
