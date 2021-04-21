@@ -1,20 +1,25 @@
-#friends-display-link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.05);
+#friends-display-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.05);
+	margin-bottom: 10px;
 }
 
-#friends-display-link i{
-    margin-left: 10px;
-    margin-right: 5px;
-    color: grey;
-    opacity: 0.5;
+#friends-display-link i {
+	margin-left: 10px;
+	margin-right: 5px;
+	color: grey;
+	opacity: 0.5;
 }
 
-#friends-display-link span{
-    font-weight: 600;
-    opacity: 0.8;
+#friends-display-link span {
+	font-weight: 600;
+	opacity: 0.8;
+}
+
+.friends-screen {
+	padding: 0px var(--horizontal-space);
 }
