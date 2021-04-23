@@ -1,7 +1,7 @@
-#class  Deep Learning & applications, Practice #1
-#file   name practice1_2014003927.py
-#author KWONMINSUK(minshogi@gmail.com)  2014003927
-#date   2021/03/25
+# class  Deep Learning & applications, Practice #1
+# file   name practice1_2014003927.py
+# author KWONMINSUK(minshogi@gmail.com)  2014003927
+# date   2021/03/25
 
 import numpy as np
 import time
@@ -16,10 +16,12 @@ Y_test = []
 W_ = []
 B_ = []
 
+
 def gen_Xs(m):
-    ret = np.array(rng.integers(low = -10, high = 10, size = 2*m))
+    ret = np.array(rng.integers(low=-10, high=10, size=2*m))
     ret.resize(2, m)
     return ret
+
 
 def gen_Ys(Xs, m):
     arr = []
@@ -30,14 +32,18 @@ def gen_Ys(Xs, m):
             arr.append(0)
     return np.array([arr])
 
+
 def gen_B():
     return rng.random()
+
 
 def gen_W():
     return np.array([[rng.random()], [rng.random()]])
 
+
 def sigmoid(z):
     return 1/(1+np.exp(-z))
+
 
 def Cost(yHat, y, size):
     J = 0
@@ -46,6 +52,7 @@ def Cost(yHat, y, size):
         yi = y[0][i]
         J += Loss(a, yi)
     return J/size
+
 
 def Cost_Acc_element(x1, x2, y, w1, w2, b, size):
     J = 0
@@ -58,22 +65,24 @@ def Cost_Acc_element(x1, x2, y, w1, w2, b, size):
             cnt += 1
 
     J /= size
-    acc = cnt/size*100    
+    acc = cnt/size*100
 
     return J, acc
 
-                                                      
+
 def Loss(a, y):
     aa = np.absolute(a-1e-9)
     return -(y*np.log(aa)+(1-y)*np.log(1-aa))
+
 
 def Accuracy(yHat, y, size):
     tmp = yHat-y
     cnt = 0
     for i in range(size):
-        if(tmp[0][i] == 0):
+        if(tmp[0][i] < 0.1):
             cnt += 1
     return cnt/size*100
+
 
 def init_():
     global X_train, Y_train, X_test, Y_test, W_, B_
@@ -84,6 +93,7 @@ def init_():
     W_ = gen_W()
     B_ = gen_B()
 
+
 def get_from_X_train(m):
     global X_train
     x1 = []
@@ -91,7 +101,8 @@ def get_from_X_train(m):
     for i in range(m):
         x1.append(X_train[0][i])
         x2.append(X_train[1][i])
-    return np.array([x1,x2])
+    return np.array([x1, x2])
+
 
 def calc_element():
     global X_train, Y_train, X_test, Y_test, W_, B_
@@ -106,22 +117,22 @@ def calc_element():
     w2 = W_[1][0]
     b = B_
 
-    alpha = 0.01
+    alpha = 0.5
     best_alpha = alpha
     best_J = 1
     best_w1 = w1
     best_w2 = w2
     best_b = b
 
-    while alpha < 1200:
+    while alpha < 1:
         tw1 = w1
         tw2 = w2
         tb = b
-        for iter in range (2000):
+        for iter in range(2000):
             dw1 = 0
             dw2 = 0
             db = 0
-            for i in range (1000):
+            for i in range(1000):
                 x1 = x1_train[i]
                 x2 = x2_train[i]
                 yi = y_train[i]
@@ -132,16 +143,17 @@ def calc_element():
                 dw1 += x1*dz
                 dw2 += x2*dz
                 db += dz
-                
+
             dw1 /= 1000
             dw2 /= 1000
             db /= 1000
-            
+
             tw1 = tw1 - alpha * dw1
             tw2 = tw2 - alpha * dw2
             tb = tb - alpha * db
-        
-        J, trs = Cost_Acc_element(x1_train, x2_train, y_train, tw1, tw2, tb, 1000)
+
+        J, trs = Cost_Acc_element(
+            x1_train, x2_train, y_train, tw1, tw2, tb, 1000)
 
         if(J < best_J):
             best_J = J
@@ -151,12 +163,12 @@ def calc_element():
             best_alpha = alpha
 
         alpha *= 7
-    
+
     w1 = best_w1
     w2 = best_w2
     b = best_b
 
-    j, acc = Cost_Acc_element(x1_train, x2_train, y_train, w1, w2, b, 1000) 
+    j, acc = Cost_Acc_element(x1_train, x2_train, y_train, w1, w2, b, 1000)
 
     print("Empirically determined (best) hyper parameter, alpha: ", best_alpha)
     print("function parameter w1: ", w1)
@@ -165,12 +177,12 @@ def calc_element():
     print(f"The cost on the '1000' train samples: ", j)
     print(f"Accuracy for the '1000' train samples: {acc}%")
 
-    j, acc = Cost_Acc_element(x1_test, x2_test, y_test, w1, w2, b, 100) 
-    
+    j, acc = Cost_Acc_element(x1_test, x2_test, y_test, w1, w2, b, 100)
+
     print(f"The cost with the '100' test samples: ", j)
     print(f"Accuracy with the '100' test samples: {acc}%")
-    
-    
+
+
 def calc_vect(m, K):
     global X_test, Y_test, W_, B_
 
@@ -181,13 +193,13 @@ def calc_vect(m, K):
 
     alpha = 0.01
     best_alpha = alpha
-    best_J = 1 
+    best_J = 1
     best_W = W
     best_B = B
-    while alpha < 1200:
+    while alpha <= 10:
         tW = W
         tB = B
-        for iter in range (K):
+        for iter in range(K):
             Z = np.dot(tW.T, X_train) + tB
             A = sigmoid(Z)
             dZ = A - Y_train
@@ -196,29 +208,29 @@ def calc_vect(m, K):
             tW = tW - alpha*dW
             tB = tB - alpha*dB
 
-    #       if(iter%10 == 0):
-    #           print("Iter: ", iter)
-    #           print("W:\n", tW)
-    #           print("B:\n", tB)
-                
+            if(iter % 10 == 0):
+                print("Iter: ", iter)
+                print("W:\n", tW)
+                print("B:\n", tB)
+
         Z = np.dot(tW.T, X_train) + tB
         A = sigmoid(Z)
         J = Cost(A, Y_train, m)
-        if(J<best_J):
+        if(J < best_J):
             best_J = J
             best_alpha = alpha
             best_W = tW
             best_B = tB
-        
-        alpha *= 7
+
+        alpha *= 2
 
     W = best_W
     B = best_B
 
     Z = np.dot(W.T, X_train) + B
-    A = sigmoid(Z)    
+    A = sigmoid(Z)
     J = Cost(A, Y_train, m)
-    
+
     print("Empirically determined (best) hyper parameter, alpha: ", best_alpha)
     print("function parameter W:\n", W)
     print("function parameter B: ", B)
@@ -229,9 +241,10 @@ def calc_vect(m, K):
     Z = np.dot(W.T, X_test) + B
     A = sigmoid(Z)
     J = Cost(A, Y_test, 100)
-    
+
     print(f"The cost with the '100' test samples: ", J)
     print(f"Accuracy with the '100' test samples: {Accuracy(A, Y_test, 100)}%")
+
 
 def time_comparison():
     print("Time calculating now ... ")
@@ -250,6 +263,7 @@ def time_comparison():
     print(f"Vectorized version, (m, K) = (1000, 2000), total time cost: ", vect_total)
 
     print(f"\nTime comparison: ", elem_total - vect_total)
+
 
 def main():
     init_()
