@@ -9,19 +9,16 @@ import json
 
 
 def genXs(m):
-    ret = np.array(np.random.uniform(low=-10.0, high=10.0, size=2*m))
+    ret = np.random.uniform(low=-10.0, high=10.0, size=2*m)
     ret.resize(2, m)
     return ret
 
 
 def genYs(Xs, m):
-    arr = []
-    for i in range(m):
-        if(Xs[0][i] + Xs[1][i] > 0):
-            arr.append(1)
-        else:
-            arr.append(0)
-    return np.array([arr])
+    arr = Xs.sum(axis=0)
+    arr[arr > 0] = 1
+    arr[arr <= 0] = 0
+    return arr
 
 
 def datagen(m, n, k):
