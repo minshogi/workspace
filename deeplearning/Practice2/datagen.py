@@ -1,11 +1,12 @@
-# class  Deep Learning & applications, Practice #2
-# file   datagen.py
-# author KWONMINSUK(minshogi@gmail.com)  2014003927
-# date
+"""
+class   Deep Learning & applications, Practice #2
+file    datagen.py
+author  KWONMINSUK(minshogi@gmail.com)  2014003927
+date    2021.04.24(sat)
+"""
+
 
 import numpy as np
-import time
-import json
 
 
 def genXs(m):

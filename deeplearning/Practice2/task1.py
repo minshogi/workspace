@@ -1,9 +1,10 @@
-# class  Deep Learning & applications, Practice #1
-# file   name practice1_2014003927.py
-# author KWONMINSUK(minshogi@gmail.com)  2014003927
-# date   2021/03/25
+"""
+class   Deep Learning & applications, Practice #2
+file    task1.py
+author  KWONMINSUK(minshogi@gmail.com)  2014003927
+date    2021.04.24(sat)
+"""
 
-import json
 import network
 
 

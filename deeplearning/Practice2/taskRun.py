@@ -1,8 +1,14 @@
+"""
+class   Deep Learning & applications, Practice #2
+file    taskRun.py
+author  KWONMINSUK(minshogi@gmail.com)  2014003927
+date    2021.04.24(sat)
+"""
+
 from datagen import datagen
 from task1 import task1
 from task2 import task2
 from task3 import task3
-import json
 
 
 def main():

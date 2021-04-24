@@ -1,9 +1,10 @@
-# class  Deep Learning & applications, Practice #1
-# file   name practice1_2014003927.py
-# author KWONMINSUK(minshogi@gmail.com)  2014003927
-# date   2021/03/25
+"""
+class   Deep Learning & applications, Practice #2
+file    task3.py
+author  KWONMINSUK(minshogi@gmail.com)  2014003927
+date    2021.04.24(sat)
+"""
 
-import json
 import network
 
 
@@ -16,7 +17,7 @@ class task3:
         ret = {}
         ret['layerSize'] = 2
         ret['unitSize'] = [3, 1]
-        ret['alpha'] = 0.5
+        ret['alpha'] = 0.6
         return ret
 
     def run(self):

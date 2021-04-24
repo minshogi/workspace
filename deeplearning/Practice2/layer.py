@@ -1,3 +1,10 @@
+"""
+class   Deep Learning & applications, Practice #2
+file    layer.py
+author  KWONMINSUK(minshogi@gmail.com)  2014003927
+date    2021.04.24(sat)
+"""
+
 import numpy as np
 
 

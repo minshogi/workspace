@@ -3,7 +3,6 @@
 # author KWONMINSUK(minshogi@gmail.com)  2014003927
 # date   2021/03/25
 
-import json
 import network
 
 
@@ -16,7 +15,7 @@ class task2:
         ret = {}
         ret['layerSize'] = 2
         ret['unitSize'] = [1, 1]
-        ret['alpha'] = 0.1
+        ret['alpha'] = 0.88
         return ret
 
     def run(self):
