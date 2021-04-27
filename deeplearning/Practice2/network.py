@@ -27,8 +27,7 @@ def LossPrime(a, y):
 
 
 def Accuracy(yHat, y, size):
-    tmp = yHat-y
-    tmp = np.absolute(tmp)
+    tmp = np.absolute(yHat-y)
     cnt = np.count_nonzero(tmp < 0.1)
     return cnt/size*100
 
@@ -96,9 +95,10 @@ class Network:
             dA = LossPrime(inA, Y)
             for L in reversed(self.Layers):
                 dA = L.backwardPropagation(dA)
-            """
+
             if(iter % 10 == 0):
-                cnt = 0
+                #print(Cost(inA, Y, self.M))
+                """cnt = 0
                 for L in self.Layers:
                     print(f'{cnt}Layer: ')
                     L.printWB()
