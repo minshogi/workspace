@@ -1,0 +1,81 @@
+CREATE TABLE Librarian(
+		ID				BIGINT			NOT NULL	AUTO_INCREMENT,
+		FName			VARCHAR(40)		NOT NULL,
+		LName			VARCHAR(40)		NOT NULL,
+		Super_ID		BIGINT,
+		Phone		VARCHAR(100)	NOT NULL,
+		Start_Date		DATE			NOT NULL,
+		
+		PRIMARY KEY(ID),
+		FOREIGN KEY(Super_ID) REFERENCES Librarian(ID)  on Delete SET NULL on update Cascade
+);
+
+CREATE TABLE Storage(
+		Name	VARCHAR(40)		NOT NULL,
+		Mgr_ID	BIGINT			NOT NULL,
+		
+		PRIMARY KEY(Name),
+		FOREIGN KEY(Mgr_ID) REFERENCES Librarian(ID) on Delete Cascade on update Cascade
+
+);
+
+CREATE TABLE Event(
+		ID			BIGINT			NOT NULL	AUTO_INCREMENT,
+		Start_Date	DATE		NOT NULL,
+		End_Date	DATE		NOT NULL,
+		Host		VARCHAR(40)		NOT NULL,		
+		
+		PRIMARY KEY(ID),
+		FOREIGN KEY(Host) REFERENCES Storage(Name) on Delete Cascade on update Cascade
+);
+
+CREATE TABLE User(
+		ID		BIGINT		NOT NULL	AUTO_INCREMENT,
+		FName	VARCHAR(40)	NOT NULL,
+		LName	VARCHAR(40)	NOT NULL,
+		Phone		VARCHAR(100)	NOT NULL,
+		
+		PRIMARY KEY(ID)
+);
+
+CREATE TABLE E_Participate(
+		Event_ID		BIGINT		NOT NULL,
+		Participant_ID	BIGINT		NOT NULL,
+		
+		PRIMARY KEY(Event_ID, Participant_ID) ,
+		FOREIGN KEY(Event_ID) REFERENCES Event(ID)  on Delete Cascade on update Cascade,
+		FOREIGN KEY(Participant_ID) REFERENCES User(ID)  on Delete Cascade on update Cascade
+);
+
+CREATE TABLE BOOK(
+		ID				BIGINT		NOT NULL	AUTO_INCREMENT,
+		Name			VARCHAR(40)	NOT NULL,
+		DofPurchase		DATE		NOT NULL,
+		Storage_Name	VARCHAR(40)	NOT NULL,
+		
+		PRIMARY KEY(ID),
+		FOREIGN KEY(Storage_Name) REFERENCES Storage(Name)  on Delete Cascade on update Cascade
+);
+
+CRATE TABLE Burrow(
+		ID			BIGINT	NOT NULL	AUTO_INCREMENT,
+		Due_date	DATE	NOT NULL,
+		Return_date	DATE,
+		Mgr_ID		BIGINT,
+		
+		PRIMARY KEY(ID),
+		FOREIGN KEY(Mgr_ID) REFERENCES Librarian(ID)  on Delete SET SULL on update Cascade
+);
+
+CREATE TABLE BBU(
+		BUR_ID		BIGINT	NOT NULL,
+		BOO_ID		BIGINT	NOT NULL,
+		USR_ID		BIGINT	NOT NULL,
+		
+		PRIMARY KET(BUR_ID,BOO_ID,USR_ID),
+		FOREIGN KEY(BUR_ID) REFERENCES Burrow(ID)  on Delete Cascade on update Cascade,
+		FOREIGN KEY(BOO_ID) REFERENCES BOOK(ID)  on Delete Cascade on update Cascade,
+		FOREIGN KEY(USR_ID) REFERENCES User(ID) on Delete Cascade on update Cascade
+)
+
+
